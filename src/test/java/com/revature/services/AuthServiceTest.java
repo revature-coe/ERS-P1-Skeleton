@@ -7,6 +7,8 @@ import static org.mockito.Mockito.*;
 
 import java.util.Optional;
 
+import com.revature.exceptions.NewUserHasNonZeroIdException;
+import com.revature.exceptions.RegistrationUnsuccessfulException;
 import com.revature.repositories.UserDAO;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -49,17 +51,44 @@ public class AuthServiceTest {
 		);
 
 		verify(userService).getByUsername(EMPLOYEE_TO_REGISTER.getUsername());
-		verify(userDAO, never()).save(EMPLOYEE_TO_REGISTER);
+		verify(userDAO, never()).create(EMPLOYEE_TO_REGISTER);
 	}
 
 	@Test
 	public void testRegisterPassesWhenUsernameIsNotTaken() {
 		when(userService.getByUsername(anyString())).thenReturn(Optional.empty());
-		when(userDAO.save(anyObject())).thenReturn(GENERIC_EMPLOYEE_1);
+		when(userDAO.create(anyObject())).thenReturn(GENERIC_EMPLOYEE_1);
 		
 		assertEquals(GENERIC_EMPLOYEE_1, authService.register(EMPLOYEE_TO_REGISTER));
 
 		verify(userService).getByUsername(EMPLOYEE_TO_REGISTER.getUsername());
-		verify(userDAO).save(EMPLOYEE_TO_REGISTER);
+		verify(userDAO).create(EMPLOYEE_TO_REGISTER);
+	}
+
+	@Test
+	public void testRegisterFailsWhenRegistrationIsUnsuccessful() {
+		when(userDAO.create(anyObject())).thenThrow(new RegistrationUnsuccessfulException());
+
+		assertThrows(RegistrationUnsuccessfulException.class,
+				() -> authService.register(EMPLOYEE_TO_REGISTER)
+		);
+	}
+
+	@Test
+	public void testRegisterFailsWhenIdIsNonZero() {
+		EMPLOYEE_TO_REGISTER.setId(1000);
+
+		assertThrows(NewUserHasNonZeroIdException.class,
+				() -> authService.register(EMPLOYEE_TO_REGISTER)
+		);
+	}
+
+	@Test
+	public void testLoginPassesWhenUsernameDoesExistAndPasswordMatches() {
+		when(userService.getByUsername(anyString())).thenReturn(Optional.of(GENERIC_EMPLOYEE_1));
+
+		assertEquals(GENERIC_EMPLOYEE_1, authService.login(GENERIC_EMPLOYEE_1.getUsername(), GENERIC_EMPLOYEE_1.getPassword()));
+
+		verify(userService).getByUsername(EMPLOYEE_TO_REGISTER.getUsername());
 	}
 }

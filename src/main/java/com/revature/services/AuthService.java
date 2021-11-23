@@ -38,6 +38,7 @@ public class AuthService {
      *     <li>Should persist the user object upon successful registration.</li>
      *     <li>Must throw exception if registration is unsuccessful.</li>
      *     <li>Must return user object if the user registers successfully.</li>
+     *     <li>Must throw exception if provided user has a non-zero ID</li>
      * </ul>
      *
      * Note: userToBeRegistered will have an id=0, additional fields may be null.
