@@ -16,4 +16,8 @@ public class ReimbursementDAO {
     public List<Reimbursement> getByStatus(Status status) {
         return Collections.emptyList();
     }
+    
+    public Reimbursement update(Reimbursement unprocessedReimbursement) {
+    	return null;
+    }
 }
