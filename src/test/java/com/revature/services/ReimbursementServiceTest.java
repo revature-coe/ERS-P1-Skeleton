@@ -50,7 +50,7 @@ public class ReimbursementServiceTest {
 	}
 	
 	@Test
-	public void testProcess() {
+	public void testProcessPassesWhenUserIsFinanceManagerAndReimbursementExistsAndUpdateSuccessful() {
 		when(reimbursementDAO.getById(anyInt())).thenReturn(Optional.of(GENERIC_REIMBURSEMENT_1));
 		when(reimbursementDAO.update(any())).thenReturn(GENERIC_REIMBURSEMENT_2);
 		
@@ -61,7 +61,7 @@ public class ReimbursementServiceTest {
 	}
 	
 	@Test
-	public void testGetReimbursementByStatus() {
+	public void testGetReimbursementByStatusPassesWhenReimbursementsAreSuccessfullyReturned() {
 		when(reimbursementDAO.getByStatus(any())).thenReturn(GENERIC_ALL_PENDING_REIMBURSEMENTS);
 		
 		assertEquals(GENERIC_ALL_PENDING_REIMBURSEMENTS, reimbursementService.getReimbursementsByStatus(Status.PENDING));
