@@ -68,5 +68,4 @@ public class ReimbursementServiceTest {
 		
 		verify(reimbursementDAO).getByStatus(Status.PENDING);
 	}
-
 }

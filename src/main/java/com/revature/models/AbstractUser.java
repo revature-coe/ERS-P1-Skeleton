@@ -71,16 +71,6 @@ public class AbstractUser {
     }
 
     @Override
-    public String toString() {
-        return "AbstractUser{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", role=" + role +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -91,5 +81,15 @@ public class AbstractUser {
     @Override
     public int hashCode() {
         return Objects.hash(id, username, password, role);
+    }
+
+    @Override
+    public String toString() {
+        return "AbstractUser{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                '}';
     }
 }

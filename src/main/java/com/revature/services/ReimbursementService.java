@@ -45,13 +45,9 @@ public class ReimbursementService {
     }
 
     /**
-     * <ul>
-     *     <li>Should retrieve all reimbursements with the correct status</li>
-     * </ul>
-     *
+     * Should retrieve all reimbursements with the correct status.
      */
     public List<Reimbursement> getReimbursementsByStatus(Status status) {
         return Collections.emptyList();
     }
-
 }
