@@ -4,7 +4,7 @@
 > We can break our project down into smaller MVPs in order to make it more manageable. 
 > As a first part to project 1, we will build a console-based application (interaction in IntelliJ's console collecting user input) without a front end. 
 
-## By the beginning of Week 3
+## By the beginning / middle of Week 3
 - Some progress on business logic and console interaction using the Scanner Class
 - Implement methods from the P1 Skeleton
   - with some tests passing
