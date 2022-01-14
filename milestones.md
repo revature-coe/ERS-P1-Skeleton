@@ -11,7 +11,7 @@
 
 ## By the end of Week 3 / Beginning of Week 4
 - Console user interaction done
-- Database persistence done
+- Database persistence done (your console-based application is successfully saving data to a database).
 
 ## By the end of Week 4 
 - Application is connected to AWS RDS Database and data is persisted
@@ -21,7 +21,7 @@
 
 ## By the middle of Week 5
 - Front end complete
-- application is using JavaScript to make placeholder buttons populate the web page with dynamic data from the back end.
+- Application is using JavaScript to make placeholder buttons populate the web page with dynamic data from the back end.
 
 ## Due Thursday/Friday of Week 5
 - Application is functioning
