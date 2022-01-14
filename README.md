@@ -1,5 +1,6 @@
 # ERS-P1-Skeleton
-This repository contains the skeleton for the P1 design.
+This repository contains the skeleton for the P1 design.  
+The [milestones.md](./milestones.md) document outlines progress metrics that you can follow. 
 
 # project-1
 > ERS, or Employee Reimbursement System is a full-stack web application that allows employees to submit requests for reimbursements for courses, events, and certifications. These requests can then be approved or rejected by the Finance Manager, while the employee is able to track the status of their requests.
