@@ -8,7 +8,7 @@ You will be required to present a 10 minute demo of your application and its fea
 Presentation date: Thursday, February 3, 2022
 
 ## Requirements
-- All required business rules from the [Project1 ERS.docx]() must be implemented.  
+- All required business rules from the [Project1 ERS.docx](https://github.com/220103-java-etl/ERS-P1-Skeleton/blob/main/Project1%20ERS.docx) must be implemented.  
   - (The ability for an employee to upload a document can be considered a stretch goal).
 - All application data must be stored in an RDS.
   - Database must be in 3NF. 
